@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="styles.css">
+<script src="main.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Visualizer</title>
+</head>
+<body >
+
+    <h1 id="po">Array Search and Sort Visualization</h1>
+    <h2 id="errors" style="color: red"></h2>
+    <input type="text" size="1" height="50px" name="arr" value="" id="inp" onkeypress="this.style.width = ((this.value.length + 1) * 28) + 'px';"/>
+
+    <button type="button" name="button"  style = "font-size:50px" onclick="numInput()">
+        Add
+    </button>
+    <button type="button" name="button"  style = "font-size:50px" onclick="clearTable()">
+        Clear
+    </button>
+    <button type="button" name="button"  style = "font-size:50px" onclick="autoFill()">
+        +10 Random's
+    </button>
+    <br>
+    <br>
+    <table id = "arrTable" style = "font-size:35px">
+        <tr id="ind" >
+            <td>Index:</td>
+        </tr>
+        <tr id = "el" style = "font-weight: bolder">
+            <td>Element:</td>
+        </tr>
+    </table>
+    <label style = "font-size:50px">Choose a Find Method:</label>
+    <select name="Find Method" id="findMethod" style = "font-size:50px">
+        <option value="Linear">Linear</option>
+        <option value="Binary" disabled>Binary</option>
+    </select>
+    <input type="text" size="1" name="toFind" value="" id="toFind" onkeypress="this.style.width = ((this.value.length + 1) * 28) + 'px';"/>
+
+    <input id="find" style = "font-size:50px" type="button" value="Find" onclick="searchInput();" /><br>
+    <label style = "font-size:50px">Choose a Sort Method:</label>
+    <select name="Sort Method" id="sortMethod" style = "font-size:50px">
+        <option value="Selection">Selection</option>
+        <option value="Bubble">Bubble</option>
+    </select>
+    <input id="sortButtoon" style = "font-size:50px" type="button" value="Sort" onclick="sortInput();" />
+    <h3>Speed: </h3>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="100" class="slider" id="speed">
+    </div>
+    <h2 id="findResult"></h2>
+    <h2 id="timeComp"></h2>
+</body>
+</html>
